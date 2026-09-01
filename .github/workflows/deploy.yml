@@ -35,13 +35,13 @@ jobs:
 
       - name: Verify Pages output
         run: |
-          test -f .output/public/index.html
-          touch .output/public/.nojekyll
+          test -f dist/index.html
+          touch dist/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: dist
 
   deploy:
     environment:
