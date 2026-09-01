@@ -7,6 +7,7 @@ export const getRouter = () => {
 
   const router = createRouter({
     routeTree,
+    basepath: "/natasha-mann-artistry-3",
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
