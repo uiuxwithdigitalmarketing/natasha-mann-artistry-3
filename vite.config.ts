@@ -9,7 +9,9 @@ export default defineConfig({
     base: "/natasha-mann-artistry-3/",
   },
 
-  nitro: isLovableSandbox ? undefined : false,
+  // Lovable's config already provides Nitro. Keep it enabled for
+  // GitHub Pages static prerendering; disabling it prevents index.html
+  // from being generated in .output/public.
 
   tanstackStart: {
     server: { entry: "server" },
@@ -18,7 +20,9 @@ export default defineConfig({
       ? undefined
       : {
           enabled: true,
+          autoSubfolderIndex: true,
           crawlLinks: true,
+          failOnError: true,
         },
   },
 });
