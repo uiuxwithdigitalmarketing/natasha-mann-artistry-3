@@ -9,13 +9,10 @@ export default defineConfig({
     base: "/natasha-mann-artistry-3/",
   },
 
-  // Lovable's config already provides Nitro. Keep it enabled for
-  // GitHub Pages static prerendering; disabling it prevents index.html
-  // from being generated in .output/public.
-
+  // Keep TanStack Start prerendering enabled for GitHub Pages.
+  // Do not override the server entry here; Lovable's TanStack config
+  // provides the correct server build entry for prerendering.
   tanstackStart: {
-    server: { entry: "server" },
-
     prerender: isLovableSandbox
       ? undefined
       : {
